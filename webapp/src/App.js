@@ -16,9 +16,6 @@ class App extends Component {
     const manager = await lottery.methods.manager().call();
     const players = await lottery.methods.getPlayers().call();
     const balance = await web3.eth.getBalance(lottery.options.address);
-    // const accounts = await web3.eth.getAccounts();
-
-    // console.log("accounts: ", accounts);
 
     this.setState({ manager, players, balance });
   }
@@ -27,8 +24,6 @@ class App extends Component {
     event.preventDefault();
 
     const accounts = await web3.eth.getAccounts();
-
-    console.log("accounts: ", accounts);
 
     this.setState({ message: 'Waiting on transaction success...' });
 
